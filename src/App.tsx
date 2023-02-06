@@ -8,16 +8,8 @@ import { useAppSelector } from './store/hooks';
 
 function App() {
 
-  const navigate = useNavigate();
-
-  const [count, setCount] = useState(0)
   const user = useAppSelector(state => state.Auth.user);
 
-  // console.log('logged In : ', user.loggedIn);
-
-  // if(user.loggedIn) {
-  //   navigate('/dashboard')
-  // }
   return (
     <div className="App">
         <Auth />

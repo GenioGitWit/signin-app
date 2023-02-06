@@ -1,5 +1,5 @@
 .welcome-heading {
-  
+    
     width: 188px;
     height: 30px;
     left: 495px;
@@ -23,7 +23,7 @@
 
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 55px;
     line-height: 82px;
     /* identical to box height */
@@ -32,6 +32,10 @@
     color: #000000;
 }
 
+.subcontainer-2 {
+    display: flex;
+    justify-content: flex-end;
+}
 
 
 .welcome-signin-small {
@@ -40,13 +44,11 @@
     height: 40px;
     left: 824px;
     top: 130px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
-
     color: #8D8D8D;
 }
 
@@ -56,13 +58,11 @@
     height: 40px;
     left: 824px;
     top: 130px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
-
     color: #B87514;
 }
 
@@ -76,13 +76,109 @@
 .form-submit-container {
     display: flex;
     justify-content: center;
+    width:100%;
+    
+    .signup-submit-button {
+        width:100%;
+        background: #E48700;
+        box-shadow: 0px 4px 19px rgba(119, 147, 65, 0.3);
+        border-radius: 10px;
+    }
+
 }
 
 .signup-input {
     position: relative;
     background: #FFFFFF;
     width:100%;
+    margin-top: 10px;
     border: 1px solid #4285F4;
     border-radius: 9px;
-    margin-top: 20rem;
+}
+
+@media screen and (200px<=width<=512px) {
+    .welcome-heading {
+        width: 188px;
+        height: 20px;
+        left: 495px;
+        top: 129px;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 200;
+        font-size: 20px;
+        line-height: 0px;
+        color: #000000;
+    }
+
+    .welcome-heading-signup {
+        width: 205px;
+        height: 40px;
+        left: 495px;
+        top: 157px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 40px;   
+    }
+}
+
+@media screen and (512px <= width <= 820px) {
+    .welcome-heading {
+        width: 188px;
+        height: 20px;
+        left: 495px;
+        top: 129px;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        color: #000000;
+    }
+
+    .welcome-heading-signup {
+        width: 205px;
+        height: 40px;
+        left: 495px;
+        top: 157px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;   
+    }
+}
+
+@media screen and (820px <= width <= 1820px) {
+    .welcome-heading {
+        width: 188px;
+        height: 20px;
+        left: 495px;
+        top: 129px;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        color: #000000;
+    }
+
+    .welcome-heading-signup {
+        width: 205px;
+        height: 40px;
+        left: 495px;
+        top: 157px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;   
+    }
 }

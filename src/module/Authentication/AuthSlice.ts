@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface User {
@@ -35,16 +35,30 @@ export const authSlice = createSlice({
         state.userList.push(JSON.parse(action.payload))
     },
     signIn : (state, action: PayloadAction<any>) => {
-        let authUser = state.userList.filter((user:User) => {
+        const authUser = state.userList.find((user:User) => {
             return user.email === action.payload?.email && user.password === action.payload.password;
         });
 
-        state.user = {...state.user, loggedIn:true};
+        if(authUser?.email) {
+            state.user = {...JSON.parse(action.payload), loggedIn:true};
+        }
+
     },
     signInSimple : (state, action: PayloadAction<any>) => {
-        state.user = {...JSON.parse(action.payload), loggedIn:true};
+        const data = localStorage.getItem('users') as string;
+        const parsedData = JSON.parse(data) as User;
+        console.log(parsedData);
+        let parsedPayload = JSON.parse(action.payload);
+        if(parsedData.email === parsedPayload?.email && parsedData.password===parsedPayload.password ) {
+            state.user = {...JSON.parse(action.payload), loggedIn:true};
+        }
     }, 
 
+    logout : (state) => {
+        // const isLoggedIn = state.user.loggedIn && state.user.email;
+        state.user = initialState.user;
+
+    },
     incrementByAmount: (state, action: PayloadAction<number>) => {
     //   state.value += action.payload
     },
@@ -52,6 +66,6 @@ export const authSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { incrementByAmount, signUp, signIn, signInSimple } = authSlice.actions;
+export const { signUp, signIn, signInSimple, logout } = authSlice.actions;
 
 export default authSlice.reducer;

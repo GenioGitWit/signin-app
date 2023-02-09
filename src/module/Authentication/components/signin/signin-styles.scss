@@ -14,13 +14,13 @@
 
 .welcome-heading-signin {
     width: 205px;
-    height: 83px;
+    height: 40px;
     left: 495px;
     top: 157px;
 
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 55px;
     line-height: 82px;
     /* identical to box height */
@@ -131,7 +131,7 @@
 
         font-family: 'Poppins';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 30px;
         line-height: 40px;   
     }
@@ -148,7 +148,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 30px;
         color: #000000;
     }
@@ -167,7 +167,7 @@
     }
 }
 
-@media screen and (820px <= width <= 1820px) {
+@media screen and (820px <= width <= 2200px) {
     .welcome-heading {
         width: 188px;
         height: 20px;
